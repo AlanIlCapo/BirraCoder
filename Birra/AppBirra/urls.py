@@ -7,7 +7,7 @@ urlpatterns = [
     path('menu/<minutas>/<descripcion>/<precio>', menu),
     path('lista-cervezas/', lista_cerveza),
     path('', inicio),
-    path('cervezas/', cervezas),
-    path('menu/', menu),
-    path('cliente/', cliente),
+    path('cervezas/', cervezas, name="Cervezas"),
+    path('menu/', menu, name="Menu"),
+    path('cliente/', cliente, name="Cliente"),
 ]
