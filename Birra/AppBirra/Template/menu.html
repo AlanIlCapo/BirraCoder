@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</Menu></title>
-</head>
-<body>
-    <h1>Vista Menu</Menu></h1>
-    
-</body>
-</html>
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block bloqueVariable %}
+            
+<h1>Menu</h1>
+
+<h4>Lista del menu</h4>
+
+<ul>
+    {%for menu  in menu%}
+        <li>{{menu.minutas}} - {{menu.descripcion}} - {{menu.precio}}</li>
+    {%endfor%}
+</ul> 
+
+{% endblock bloqueVariable %}

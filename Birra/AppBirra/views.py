@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Cerveza
 from django.http import HttpResponse
-from .models import Menu
+from .models import Menu, Cliente
 
 
 def cerveza (request, estilo, ibu, alcohol):
@@ -39,14 +39,59 @@ def inicio(request):
 
 def cervezas(request):
 
-    return render(request, "cervezas.html")
+    lista = Cerveza.objects.all()
+
+    return render(request,"cervezas.html", {"cerveza":lista})  #"lista_cerveza.html", {"lista_cerveza":lista} )
 
 
 def menu(request):
 
-    return render(request, "menu.html")
+    lista = Menu.objects.all()
+
+    return render(request, "menu.html", {"menu":lista})
 
 
 def cliente(request):
 
-    return render(request, "cliente.html")
+    lista = Cliente.objets.all()
+
+    return render(request, "cliente.html", {"cliente":lista})
+
+#Formularios--------------------
+def cervezaFormulario(request):
+
+    if request.method=='POST':
+
+        cerveza = Cerveza(estilo=request.POST['estilo'], ibu=request.POST['ibu'], alcohol=request.POST['alcohol'])
+        cerveza.save()
+
+        return redirect('Cervezas')
+    
+    else:
+        return render(request, "cervezaFormulario.html")
+    
+
+def menuFormulario(request):
+
+    if request.method=='POST':
+
+        menu= Menu(minutas=request.POST['minutas'], descripcion=request.POST['descripcion'], precio=request.POST['precio'])
+        menu.save()
+
+        return redirect('Menu')
+    
+    else:
+        return render(request, "menuFormulario.html")
+
+
+def clienteFormulario(request):
+
+    if request.method=='POST':
+
+        menu= Cliente(nombre=request.POST['nombre'], apellido=request.POST['apellido'], email=request.POST['email'])
+        menu.save()
+
+        return redirect('Cliente')
+    
+    else:
+        return render(request, "clienteFormulario.html")

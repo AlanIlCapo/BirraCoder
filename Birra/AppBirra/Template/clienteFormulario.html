@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block bloqueVariable %}
+            
+    <form action="{% url 'clienteFormulario' %}" method="POST"> {% csrf_token %}
+        
+        <p>Nombre: <input type="text" name="nombre"/> </p>
+        <p>Apellido: <input type="text" name="apellido"/> </p>
+        <p>Email: <input type="email" name="email"/> </p>
+
+        <input type="submit" value="Enviar"/>
+
+    </form>
+
+{% endblock bloqueVariable %}
