@@ -4,14 +4,14 @@
 
 {% block bloqueVariable %}
             
-<h1>Menu</h1>
+    <h1>Menu</h1>
 
-<h4>Lista del menu</h4>
+    <h4>Lista del menu</h4>
 
-<ul>
-    {%for menu  in menu%}
-        <li>{{menu.minutas}} - {{menu.descripcion}} - {{menu.precio}}</li>
-    {%endfor%}
-</ul> 
-
+    <ul>
+        {%for menu  in menu%}
+            <li>{{menu.minutas}} - {{menu.descripcion}} - {{menu.precio}}</li>
+        {%endfor%}
+    </ul> 
+    <a href="{% url 'menuFormulario' %}">Agrega menu</a>
 {% endblock bloqueVariable %}

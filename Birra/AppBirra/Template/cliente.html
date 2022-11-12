@@ -4,7 +4,14 @@
 
 {% block bloqueVariable %}
             
-<h1>Vista Cliente</h1>
+    <h1>Vista Cliente</h1>
 
-<h4>Datos para que cliente se loguee</h4>
+    <h4>Datos para que cliente se loguee</h4>
+
+    <ul>
+        {%for cliente  in cliente%}
+            <li>{{cliente.nombre}} - {{cliente.apellido}} - {{cliente.email}}</li>
+        {%endfor%}
+    </ul> 
+
 {% endblock bloqueVariable %}

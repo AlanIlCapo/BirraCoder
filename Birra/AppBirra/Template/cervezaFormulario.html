@@ -6,10 +6,14 @@
             
     <form action="{% url 'cervezaFormulario' %}" method="POST"> {% csrf_token %}
         
-        <p>Estilo: <input type="text" name="estilo"/> </p>
+        <!-- <p>Estilo: <input type="text" name="estilo"/> </p>
         <p>Ibu: <input type="number" name="ibu"/> </p>
-        <p>Alcohol: <input type="number" name="alcohol"/> </p>
+        <p>Alcohol: <input type="number" name="alcohol"/> </p> -->
 
+       
+       {{mi_formulario_cerveza.as_p}}
+       
+       
         <input type="submit" value="Enviar"/>
 
     </form>

@@ -4,14 +4,16 @@
 
 {% block bloqueVariable %}
             
-<h1>Listado de Cervezas</h1>
+    <h1>Listado de Cervezas</h1>
 
-<h4>Listado de estilo de cervezas</h4>
+    <h4>Listado de estilo de cervezas</h4>
 
-<ul>
-    {%for cerveza in cerveza%}
-        <li>{{cerveza.estilo}} - {{cerveza.ibu}} - {{cerveza.alcohol}}</li>
-    {%endfor%}
-</ul>
+    <ul>
+        {%for cerveza in cerveza%}
+            <li>{{cerveza.estilo}} - {{cerveza.ibu}} - {{cerveza.alcohol}}</li>
+        {%endfor%}
+    </ul>
+
+    <a href="{% url 'cervezaFormulario' %}">Agrega cerveza</a>
 
 {% endblock bloqueVariable %}

@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block bloqueVariable %}
+            
+    <form action="{% url 'buscar_cerveza' %}" method="GET"> {% csrf_token %}
+        
+        <p>Ingrese estilo de cerveza <input type="text" name="estilo"/> </p>
+       
+        <input type="submit" value="Buscar estilo"/>
+
+    </form>
+
+{% endblock bloqueVariable %}

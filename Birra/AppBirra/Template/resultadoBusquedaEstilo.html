@@ -1,0 +1,11 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block bloqueVariable %}
+            
+    <p>Cerveza estilo :{{estilo}}</p>
+
+    <h4>Estilo: {{cerveza.estilo}} -Ibu: {{cerveza.ibu}} -Abv: {{cerveza.alcohol}}</h4>
+
+{% endblock bloqueVariable %}

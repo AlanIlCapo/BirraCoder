@@ -6,9 +6,11 @@
             
     <form action="{% url 'menuFormulario' %}" method="POST"> {% csrf_token %}
         
-        <p>Minutas: <input type="text" name="minutas"/> </p>
+        <!-- <p>Minutas: <input type="text" name="minutas"/> </p>
         <p>Descripcion: <input type="text" name="descripcion"/> </p>
-        <p>Precio: <input type="number" name="precio"/> </p>
+        <p>Precio: <input type="number" name="precio"/> </p> -->
+
+        {{mi_formulario_menu.as_p}}
 
         <input type="submit" value="Enviar"/>
 
